@@ -1,7 +1,9 @@
 
 using System;
+using CommandsService.AsyncDataServices;
 using CommandsService.Contracts;
 using CommandsService.Data;
+using CommandsService.EventProcessing;
 using CommandsService.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -33,7 +35,9 @@ public class Startup
         }
 
         services.AddScoped<ICommandRepo, CommandRepo>();
+        services.AddSingleton<IEventProcessor, EventProcessor>();
         services.AddControllers();
+        services.AddHostedService<MessageBusSubscriber>();
         services.AddAutoMapper(typeof(Program).Assembly);
     }
 

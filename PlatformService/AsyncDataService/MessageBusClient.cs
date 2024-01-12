@@ -44,7 +44,6 @@ namespace PlatformService.AsyncDataService
             {
                 Console.WriteLine("RabbitMQ connection Open, sending message...");
                 SendMessage(message);
-                // Dispose();
             }else
             {
                 Console.WriteLine("RabbitMQ connection Closed, not sending message...");

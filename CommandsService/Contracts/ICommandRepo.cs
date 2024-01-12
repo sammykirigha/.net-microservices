@@ -8,6 +8,7 @@ namespace CommandsService.Contracts
         IEnumerable<Platform> GetAllPlatforms();
         void CreatePlatform(Platform platform);
         bool PlatformExists(int platformId);
+        bool ExternalPlatformExists(int externalePlatformID);
 
         IEnumerable<Command> GetCommandsForPlatform(int platfornId);
         Command GetCommand(int platformId, int commandId);
