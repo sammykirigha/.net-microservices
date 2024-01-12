@@ -1,0 +1,71 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: rabbit-mq
+  name: rabbitmq-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rabbit-mq
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+         app: rabbit-mq
+    spec:
+      containers:
+      - image: rabbitmq:3-management
+        name: rabbit-mq
+        ports:
+        - containerPort: 15672
+          name: rbmq-mgmt-port
+        - containerPort: 5672
+          name: rbmq-msg-port
+      #   volumeMounts:
+      #   - mountPath: /etc/rabbitmq
+      #     name: rabbit-mq-data
+      # restartPolicy: Always
+      # hostname: rabbit-mq
+      # volumes:
+      # - name: rabbit-mq-data
+      #   persistentVolumeClaim:
+      #     claimName: rabbit-mq-data
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: rabbitmq-clusterip-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: rabbit-mq
+  ports: 
+    - name: rbmq-msg-port
+      protocol: TCP
+      port: 5672
+      targetPort: 5672
+    - name: rbmq-mgmt-port
+      protocol: TCP
+      port: 15672
+      targetPort: 15672
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: rabbitmq-loadbalancer-srv
+spec:
+  type: LoadBalancer
+  selector:
+    app: rabbit-mq
+  ports: 
+    - name: rbmq-msg-port
+      protocol: TCP
+      port: 5672
+      targetPort: 5672
+    - name: rbmq-mgmt-port
+      protocol: TCP
+      port: 15672
+      targetPort: 15672

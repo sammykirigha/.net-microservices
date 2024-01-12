@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\PROJECTS\\PERSONAL\\DOTNET\\microservices\\CommandsService\\CommandsService.csproj": {}
+    "/home/sammy/projects/.net-microservices/CommandsService/CommandsService.csproj": {}
   },
   "projects": {
-    "D:\\PROJECTS\\PERSONAL\\DOTNET\\microservices\\CommandsService\\CommandsService.csproj": {
+    "/home/sammy/projects/.net-microservices/CommandsService/CommandsService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\PROJECTS\\PERSONAL\\DOTNET\\microservices\\CommandsService\\CommandsService.csproj",
+        "projectUniqueName": "/home/sammy/projects/.net-microservices/CommandsService/CommandsService.csproj",
         "projectName": "CommandsService",
-        "projectPath": "D:\\PROJECTS\\PERSONAL\\DOTNET\\microservices\\CommandsService\\CommandsService.csproj",
-        "packagesPath": "C:\\Users\\SamuelKirigha\\.nuget\\packages\\",
-        "outputPath": "D:\\PROJECTS\\PERSONAL\\DOTNET\\microservices\\CommandsService\\obj\\",
+        "projectPath": "/home/sammy/projects/.net-microservices/CommandsService/CommandsService.csproj",
+        "packagesPath": "/home/sammy/.nuget/packages/",
+        "outputPath": "/home/sammy/projects/.net-microservices/CommandsService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\SamuelKirigha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/home/sammy/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,9 +38,37 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "RabbitMQ.Client": {
+              "target": "Package",
+              "version": "[6.8.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -68,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/7.0.114/RuntimeIdentifierGraph.json"
         }
       }
     }
